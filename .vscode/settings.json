@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.https": {
+        "enable": true,
+        "cert": "C:\\source\\burtonrodman\\azure-devops-environment-status\\ssl-self-sign\\server.crt",
+        "key": "C:\\source\\burtonrodman\\azure-devops-environment-status\\ssl-self-sign\\server.key",
+        "passphrase": "12345"
+    }
+}

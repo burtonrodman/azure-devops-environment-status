@@ -1,0 +1,39 @@
+{
+    "manifestVersion": 1,
+    "id": "azure-devops-environment-status",
+    "publisher": "burtonrodman",
+    "version": "1.0.0",
+    "name": "Azure DevOps - Environment Status",
+    "description": "Display the status of Pipelines deployed to an Environment in a more readable way.",
+    "public": false,
+    "categories": ["Azure Pipelines"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "my-hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-code-web.code-hub-group"
+            ],
+            "properties": {
+                "name": "My Hub",
+                "uri": "my-hub.html"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "my-hub.html",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}
