@@ -1,15 +1,46 @@
 {
-  "name": "azure-devops-environment-status",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vss-web-extension-sdk": "^5.141.0"
-  }
+    "name": "azure-devops-environment-status",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rimraf ./dist",
+        "compile": "npm run clean && webpack --mode production",
+        "compile:dev": "npm run clean && webpack --mode development",
+        "build": "npm run compile",
+        "build:dev": "npm run compile:dev && npm run postbuild",
+        "postbuild": "npm run package-extension -- --rev-version",
+        "package-extension": "tfx extension create --manifest-globs azure-devops-extension.json src/**/*.json",
+        "publish-extension": "tfx extension publish --manifest-globs azure-devops-extension.json src/**/*.json"
+    },
+    "keywords": [
+        "extensions",
+        "Azure DevOps"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "azure-devops-extension-api": "^1.158.0",
+        "azure-devops-extension-sdk": "^2.0.11",
+        "azure-devops-ui": "^2.167.33",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "typescript": "^4.7.4",
+        "vss-web-extension-sdk": "^5.141.0"
+    },
+    "devDependencies": {
+        "@types/react": "^16.8.0",
+        "@types/react-dom": "^16.8.0",
+        "base64-inline-loader": "^2.0.1",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.7.1",
+        "node-sass": "^7.0.1",
+        "rimraf": "^3.0.2",
+        "sass-loader": "^13.0.1",
+        "style-loader": "^3.3.1",
+        "tfx-cli": "^0.12.0",
+        "ts-loader": "^9.3.1",
+        "webpack": "^5.73.0",
+        "webpack-cli": "^4.10.0"
+    }
 }
