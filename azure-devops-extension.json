@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "azure-devops-environment-status",
     "publisher": "burtonrodman",
-    "version": "1.0.8",
+    "version": "1.0.17",
     "name": "Azure DevOps - Environment Status",
     "description": "Display the status of Pipelines deployed to an Environment in a more readable way.",
     "public": false,
@@ -22,5 +22,15 @@
             "path": "dist",
             "addressable": true
         }
+    ],
+    "scopes": [
+        "vso.environment_manage",
+        "vso.build",
+        "vso.build_execute",
+        "vso.machinegroup_manage",
+        "vso.release",
+        "vso.release_execute",
+        "vso.release_manage",
+        "vso.taskgroups_read"
     ]
 }
