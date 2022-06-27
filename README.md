@@ -1,4 +1,4 @@
-# Documentation and Sample Links
+# Azure DevOps Documentation and Sample Links
 
 [Sample](https://github.com/microsoft/azure-devops-extension-sample)
 
